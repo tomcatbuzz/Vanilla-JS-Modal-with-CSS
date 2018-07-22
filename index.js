@@ -6,7 +6,7 @@ var outputParagraph = document.querySelector('#quote');
 var textEdit = document.querySelector('.modal textarea');
 
 var quote = 'A Modal Component on a Webpage - how hard could it be?';
-outputParagraph.textContent = quote;
+var editedQuote = '';
 
 function updateParagraph() {
   outputParagraph.textContent = quote;
@@ -22,6 +22,7 @@ updateParagraph();
 buttons[2].addEventListener('click', function() {
   modal.style.display = 'block';
   backdrop.style.display = 'block';
+  editedQuote = quote;
   textEdit.value = quote;
 });
 
@@ -30,12 +31,12 @@ backdrop.addEventListener('click', closeModal);
 
 buttons[1].addEventListener('click', function () {
   closeModal();
-  if (editQuote.trim().length > 0) {
-    quote = editQuote;
+  if (editedQuote.trim().length > 0) {
+    quote = editedQuote;
     updateParagraph();
   }
 });
 
 textEdit.addEventListener('input', function () {
-  editQuote = textEdit.value;
+  editedQuote = textEdit.value;
 })
