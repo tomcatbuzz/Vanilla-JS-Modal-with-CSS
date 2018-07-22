@@ -39,4 +39,4 @@ buttons[1].addEventListener('click', function () {
 
 textEdit.addEventListener('input', function () {
   editedQuote = textEdit.value;
-})
+});
